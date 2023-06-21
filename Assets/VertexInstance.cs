@@ -17,6 +17,7 @@ public class VertexInstance : MonoBehaviour
             v.x = Mathf.Cos(Mathf.PI * 2 * i / polygonalNumber);
             v.y = Mathf.Sin(Mathf.PI * 2 * i / polygonalNumber);
             v*=radius;
+            v += transform.position;
             var vertexInstance=Instantiate<GameObject>(this.gameObject, v, Quaternion.identity);
             Destroy(vertexInstance.GetComponent<VertexInstance>());
         }
